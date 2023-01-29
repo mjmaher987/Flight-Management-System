@@ -1,8 +1,12 @@
 from .models import *
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 def login(request):
     pass
+
+def get_passengers(request):
+    result = [p.toJSON() for p in Passenger.objects.all()]
+    return JsonResponse(result, safe=False)
 
 
 def get_questions(request):

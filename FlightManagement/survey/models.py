@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+import json
 
 class AirlineManager(models.Model):
     username = models.CharField(primary_key=True, max_length=250)
@@ -99,8 +100,15 @@ class DescriptiveQuestion(models.Model):
 
 class Passenger(models.Model):
     passportnumber = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=250, blank=True, null=True)
+    name = models.CharField(max_length=500, blank=True, null=True)
     gender = models.CharField(max_length=250, blank=True, null=True)
+
+    def toJSON(self):
+        return {"passportnumber":self.passportnumber,
+         "name":self.name,
+         "gender":self.gender,
+         "id": self.passportnumber
+        }
 
     class Meta:
         managed = False
