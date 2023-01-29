@@ -1,6 +1,19 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from .models import *
+from django.http import JsonResponse
 
+def login(request):
+    pass
+
+
+def get_questions(request):
+    queryset = Question.objects.all().values()
+    return JsonResponse({"result": list(queryset)})
+
+def get_flights(request):
+    queryset = Flight.objects.all().values()
+    return JsonResponse({"result": list(queryset)})
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+
+    queryset = AirlineManager.objects.all().values()
+    return JsonResponse({"result": list(queryset)})
