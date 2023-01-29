@@ -1,4 +1,5 @@
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
 
 def login(request):
@@ -8,10 +9,14 @@ def get_passengers(request):
     result = [p.toJSON() for p in Passenger.objects.all()]
     return JsonResponse(result, safe=False)
 
+@csrf_exempt
 def update_passenger(request):
-    p = Passenger.first(passportnumber = request['passportnumber'])
-    p.name = request['name']
+    data = json.loads(request.body)
+    p = Passenger.objects.get(passportnumber = data['id'])
+    p.name = data['name']
+    p.gender = data['gender']
     p.save()
+    return HttpResponse()
 
 
 def get_questions(request):
