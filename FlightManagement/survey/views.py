@@ -8,6 +8,11 @@ def get_passengers(request):
     result = [p.toJSON() for p in Passenger.objects.all()]
     return JsonResponse(result, safe=False)
 
+def update_passenger(request):
+    p = Passenger.first(passportnumber = request['passportnumber'])
+    p.name = request['name']
+    p.save()
+
 
 def get_questions(request):
     queryset = Question.objects.all().values()

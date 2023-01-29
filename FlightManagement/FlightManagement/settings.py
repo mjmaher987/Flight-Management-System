@@ -25,8 +25,10 @@ SECRET_KEY = 'django-insecure-q#z-!68k+amkxe@6^-3#3$-47&m=gwel05@j3=om5nnp)k0(ba
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.27.54.253']
+ALLOWED_HOSTS = ['172.27.14.16']
 
+CSRF_TRUSTED_ORIGINS = ['https://*.mydomain.com','https://*.127.0.0.1','http://localhost:3000']
+CSRF_COOKIE_SECURE = False
 
 # Application definition
 
@@ -55,8 +57,6 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True   
-
-
 
 ROOT_URLCONF = 'FlightManagement.urls'
 
