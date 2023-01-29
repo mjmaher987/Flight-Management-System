@@ -6,7 +6,7 @@ def login(request):
     pass
 
 def get_passengers(request):
-    result = [p.toJSON() for p in Passenger.objects.all().order_by('passportnumber')]
+    result = [p.toJSON() for p in Passenger.objects.all().order_by('id')]
     return JsonResponse(result, safe=False)
 
 @csrf_exempt
