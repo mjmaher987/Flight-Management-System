@@ -12,10 +12,15 @@ def get_passengers(request):
 @csrf_exempt
 def update_passenger(request):
     data = json.loads(request.body)
-    p = Passenger.objects.get(passportnumber = data['id'])
-    p.name = data['name']
-    p.gender = data['gender']
-    p.save()
+    if('id' in data):
+        p = Passenger.objects.get(id = data['id'])
+        p.name = data['name']
+        p.gender = data['gender']
+        p.passportnumber = data['passportNumber']
+        p.save()
+    else:
+        p = Passenger.objects.create(name=data['name'], passportnumber=int(data['passportNumber']),gender=data['gender'])
+        p.save()
     return HttpResponse()
 
 

@@ -99,15 +99,16 @@ class DescriptiveQuestion(models.Model):
         unique_together = (('qnumber', 'surveyid'),)
 
 class Passenger(models.Model):
-    passportnumber = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=500, blank=True, null=True)
     gender = models.CharField(max_length=250, blank=True, null=True)
+    passportnumber = models.CharField(max_length=250, blank=True, null=True)
 
     def toJSON(self):
         return {"passportnumber":self.passportnumber,
          "name":self.name,
          "gender":self.gender,
-         "id": self.passportnumber
+         "id": self.id
         }
 
     class Meta:
