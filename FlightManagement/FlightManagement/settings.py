@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'survey.apps.SurveyConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,9 +77,9 @@ WSGI_APPLICATION = 'FlightManagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'myproject',
-        'USER': '',
-        'PASSWORD': 'password',
+        'NAME': 'phase2',
+        'USER': 'admin',
+        'PASSWORD': '123456789',
         'HOST': 'localhost',
         'PORT': '',
     }
