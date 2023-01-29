@@ -19,7 +19,7 @@ def update_passenger(request):
         p.passportnumber = data['passportNumber']
         p.save()
     else:
-        p = Passenger.objects.create(name=data['name'], passportnumber=int(data['passportNumber']),gender=data['gender'])
+        p = Passenger.objects.create(name=data['name'], passportnumber=data['passportNumber'],gender=data['gender'])
         p.save()
     return HttpResponse()
 
