@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "c8a72e25-4660-4c84-ad68-bfa80191a973",
+		"name": "db",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23043454"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Passenger management",
+					"item": [
+						{
+							"name": "get_passenger",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/Admin/get_passenger",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"get_passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add_passenger",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"passportnumber\": \"0024738859\",\n        \"name\": \"MohammadMahdi mirzaei\",\n        \"gender\": \"male\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/Admin/add_passenger",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"add_passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_passenger",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 22,\n    \"passportnumber\": \"0024458859\",\n    \"name\": \"yasharJan\",\n    \"gender\": \"male\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/Admin/update_passenger",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"update_passenger"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/Admin/delete_passenger",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"delete_passenger"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Survey",
+					"item": [
+						{
+							"name": "get_survey",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/Admin/get_survey/Ali",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"get_survey",
+										"Ali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add_survey",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"starttime\": \"2022-12-09T08:50:10.000+00:00\",\n    \"endtime\": \"2022-12-12T09:03:00.000+00:00\",\n    \"isvalid\": true,\n    \"flightnumber\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/Admin/add_survey/Ali",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"add_survey",
+										"Ali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_survey_question",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/Admin/get_survey_question/Ali",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"get_survey_question",
+										"Ali"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add_question",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"questiontitle\": \"Q11111Des Question?\",\n    \"access\": true,\n    \"forecetoanswer\": true,\n    \"passengerType\": \"N\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/Admin/add_question/Ali",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"Admin",
+										"add_question",
+										"Ali"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Passenger",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
